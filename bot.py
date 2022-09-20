@@ -56,32 +56,14 @@ data = (datetime.datetime.now().strftime("%H:%M"))
 
 
 def rt():
-	for result in api.search(q="maicon kuster", count=30):
+	for result in api.search(q="#bolhadev", count=30):
 		try:
 			api.retweet(result.id)
 			print("\n")
 			print(BLUE + data + " " + GREEN + result.text)
 
 		except:
-			time.sleep(1)
-
-	for result in api.search(q="#BOLHADEV", count=30):
-		try:
-			api.retweet(result.id)
-			print("\n")
-			print(BLUE + data + " " + GREEN + result.text)
-
-		except:
-			time.sleep(1)
-
-	for result in api.search(q="my conquister", count=30):
-		try:
-			api.retweet(result.id)
-			print("\n")
-			print(BLUE + data + " " + GREEN + result.text)
-
-		except:
-			time.sleep(1)			
+			time.sleep(1)		
 
 schedule.every(1).seconds.do(rt)
 
