@@ -65,7 +65,7 @@ def rt():
 		except:
 			time.sleep(1)
 
-	for result in api.search(q="maicon küster", count=30):
+	for result in api.search(q="#BOLHADEV", count=30):
 		try:
 			api.retweet(result.id)
 			print("\n")
